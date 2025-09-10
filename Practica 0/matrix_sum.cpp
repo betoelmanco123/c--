@@ -4,7 +4,7 @@ using namespace std;// Comando que me permite ignorar el escribir std::
 
 int main() { // Funcion principal
 	int i,j,k,m,n; //Inicializamos las variables
-	int	matrices[3][3][3]; // Inicializamos la matriz que almacenara las matrices
+	int	matrices[3][3][3]; // Inicializamos la matriz que almacenara las matrices 
 	for (k=0; k<2; k++) { //Creamos un bucle que iterara sobre cada matriz
 		for (i=0; i<3; i++) { //Creamos un bucle que iterara sobre cada columna
 			for (j=0; j<3; j++) { //Creamos un bucle que iterara sobre cada fila
