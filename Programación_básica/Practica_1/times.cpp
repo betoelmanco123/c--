@@ -35,7 +35,6 @@ int main(){
         for (j=0; j<n; j++){
             temp = 0;
             for (k=0; k<p; k++){
-
                     temp += matriz_A[i][k] * matriz_B[k][j];
             }
             matriz_C[i][j] = temp;
