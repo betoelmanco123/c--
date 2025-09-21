@@ -12,8 +12,9 @@ int main() {
         {7,8,9,12},
         {13,14,15,16}
     };
-    int aux[3][3];
+
     for (k=0; k<m; k++){
+        int aux[m-1][m-1];
         for (i=0; i<m; i++){
             for (j=0; j<n; j++){
                 if (i==0 | j==k){
@@ -41,6 +42,7 @@ int main() {
 
         }
         }
+        cout << "value" << matriz_A[0][k] << endl;
         cout << "---------" << endl;
         for (i=0; i<3; i++){
             for (j=0; j<3; j++){
@@ -51,9 +53,6 @@ int main() {
     }
 };
 
-int det(int matrix[]) {
 
-
-};
  
 
