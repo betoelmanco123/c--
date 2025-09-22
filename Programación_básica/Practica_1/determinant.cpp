@@ -12,8 +12,9 @@ int main() {
         {7,8,9,12},
         {13,14,15,16}
     };
-
+    
     for (k=0; k<m; k++){
+        n = m;
         int copy[m][m];
         for (i=0; i<m; i++){
             for (j=0; j<n; j++){
@@ -21,11 +22,14 @@ int main() {
             }
             
         }
-        // while (m>2){
-            int aux[m-1][m-1];
-            for (i=0; i<m; i++){
-                for (j=0; j<m; j++){
-                    if (i==0 | j==k){
+
+        while (n > 1){
+
+        cout << "work ";
+            int aux[n-1][n-1];
+            for (i=0; i<n; i++){
+                for (j=0; j<n; j++){
+                    if (i==0 || j==k){
                         continue;
                     }
                     //cout << "( "<< i << ", " << j << ")";
@@ -50,18 +54,17 @@ int main() {
                     
                 }
             }
-            m = m-1;
-            cout << "value: " << matriz_A[0][k] << endl;
+            n -= 1;
+            cout << "value: " << copy[0][k] << endl;
             cout << "---------" << endl;
-            for (i=0; i<m; i++){
-                for (j=0; j<m; j++){
+            for (i=0; i<n; i++){
+                for (j=0; j<n; j++){
                     cout << aux[i][j] << " " ;
                 }
                 cout << endl ;
             }
-            m = n;
     }
-//}
+}
 };
 
 
