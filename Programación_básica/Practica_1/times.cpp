@@ -1,21 +1,21 @@
 #include<iostream>
 
 using namespace std;
+int m,p,q,n; // Tamaños
+int i,j,k,t; // Índices
 
-int main(){
-    int m,p,q,n; // Tamaños
-    int i,j,k,t; // Índices
-    cout <<  "¿Cuál es el numero de filas matriz A" << endl;
+void times(){
+    cout <<  "How many  rows does the matrix A have?\n";
     cin >> m;
-    cout << "¿Cuál es el numero de columnas matriz A" << endl;
+    cout << "How many columns does the matrix A have?\n";
     cin >> p;
-    cout <<  "¿Cuál es el numero de filas matriz B" << endl;
+    cout <<  "How many rows does the matrix B have?\n";
     cin >> q;
-    cout << "¿Cuál es el numero de columnas matriz B" << endl;
+    cout << "How many columns does the matrix B have\n";
     cin >> n;
     if (p!=q){
         cout << "La operacion es invalida, la cantidad de columnas de la matriz A debe coicidir con las filas de la matriz B";
-        return 0 ;
+        return;
     };
     int matriz_A[m][p], matriz_B[q][n], matriz_C[m][n];
     for (i=0; i<m; i++){
@@ -39,5 +39,18 @@ int main(){
             cout << matriz_C[i][j] << " ";
         }
         cout << endl;
+    }
+}
+
+int main(){
+    bool foll = 1;
+    char value;
+    while (foll){
+        times();
+        cout << "do you wanna continue? (y/n)";
+        cin >> value;
+        if (value == 'n'){
+            foll = 0;
+        }
     }
 }

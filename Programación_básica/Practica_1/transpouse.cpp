@@ -1,31 +1,33 @@
 #include<iostream>
 
 using namespace std;
+bool is_running = 1;
+bool up = 1;
+bool down = 1;
+char value;
+int m;//Size
+int i,j; // Index
 
 void transpose() {
-    bool up = 1;
-    bool down = 1;
-    int m;
-    int i,j; // Índices
-    cout <<  "¿Cuál es el numero de filas y columnas para la Matriz cuadrada A" << endl;
+    cout <<  "How many columns and rows does the matrix have?\n";
     cin >> m;
     int matriz_A[m][m];
     for (i=0; i<m; i++){
         for (j=0; j<m; j++){
-            cout << "¿Cuál es el valor de la matriz A en la posición (" << i << ", " << j << "): ";
+            cout << "what is the value of the matrix on the positoon (" << i << ", " << j << "): ";
             cin >> matriz_A[i][j];
         }
     }
     for (i=0; i<m; i++){
         for (j=0; j<m; j++){
-            if (j==i){
+            if (j==i){//The diagonal
                 continue;
             }
-            if (i<j && up){
+            if (i<j && up){//Above the diagonal
                 if (matriz_A[i][j] != 0){
                     up = 0;
                 }
-            }else{
+            }else{//Below the diagonal
                 if (down){
                     if (matriz_A[i][j] != 0){
                         down = 0;
@@ -48,14 +50,12 @@ void transpose() {
 }
 
 int main(){
-    bool foll = 1;
-    char value;
-    while (foll){
+    while (is_running){
         transpose();
-        cout << "do you wanna continue? (y/n)";
+        cout << "do you wanna continue? (y/n): ";
         cin >> value;
         if (value == 'n'){
-            foll = 0;
+            is_running = 0;
         }
     }
 }
