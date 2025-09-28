@@ -1,4 +1,5 @@
 #include<iostream>
+
 using namespace std;
 
 int main(){
@@ -12,10 +13,9 @@ int main(){
             cout << "¿Cuál es el valor de la matriz B en la posición (" << i << ", 0): ";
             cin >> matriz_B[i][0];
     }
-
-            matriz_C[0][0] = 0;
-            for (i=0; i<3; i++){
-                    matriz_C[0][0] += matriz_A[0][i] * matriz_B[i][0];
-            }
-            cout << matriz_C[0][0] << endl;
+    matriz_C[0][0] = 0;
+    for (i=0; i<3; i++){
+            matriz_C[0][0] += matriz_A[0][i] * matriz_B[i][0];
+    }
+    cout << matriz_C[0][0] << endl;
     }
