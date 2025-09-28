@@ -3,13 +3,30 @@
 using namespace std;
 
 int main() {
+    int m;
     int i,j,k;
+    cout <<  "¿Cuál es el numero de filas y columnas para la Matriz cuadrada A" << endl;
+    cin >> m;
+    if (m<1 || m>3){
+        cout << "Ingresa un tamaño valido para la matriz (No mas de 3x3)\n";
+        return 0;
+    }
+    int matrix_A[m][m];
+    for (i=0; i<m; i++){
+        for (j=0; j<m; j++){
+            cout << "¿Cuál es el valor de la matriz A en la posición (" << i << ", " << j << "): ";
+            cin >> matrix_A[i][j];
+        }
+    }
     int value, result;
-    int matrix_A[3][3] = {
-        {1,2,3},
-        {4,5,6},
-        {7,8,9}
-    };
+    if (m==1){
+        cout << "El determinante es " << matrix_A[0][0] << "\n";
+        return 0;
+    }else if(m==2){
+        k = matrix_A[0][0] * matrix_A[1][1] - matrix_A[1][0] * matrix_A[0][1];
+        cout << "El determinant es: " << k << "\n";
+        return 0;
+    }
     int determinant;
     int aux[2][2];
     int sum = 0;
@@ -39,13 +56,6 @@ int main() {
     
 }
     }
-    for (i=0; i<2; i++){
-        for (j=0; j<2; j++){
-            cout << aux[i][j] << " ";
-    
-        }
-        cout << endl;
-    }
     determinant = aux[0][0] * aux[1][1] - aux[1][0] * aux[0][1];
     if (k % 2 == 0){
     value = matrix_A[0][k];}
@@ -53,67 +63,11 @@ int main() {
         value = matrix_A[0][k] * -1;
     }
     result = determinant * value;
-    cout << "Determinant = " << determinant << "  value = " << value << endl;
-    cout << "result" << result << endl;
+
     sum += result;
 }
 cout << "determinant = " << sum << endl;
 
-}
-
-
-
-
-
-int determinant(int mat[10][10], int n){
-    int determinant;
-    int k,i,j;
-    int value, result, sum;
-    int aux[n-1][n-1];
-        for (k=0; k<n; k++){
-        for (i=0; i<n; i++){
-            for (j=0; j<n; j++){
-                if (i==0 || j==k){
-                    continue;
-                }
-                    //cout << "( "<< i << ", " << j << ")";
-                    if (k==0){
-                    // Elimina el caso mas sencillo, se escogio el valor (0,0)
-                        aux[i-1][j-1] = mat[i][j];
-                    }else if (k==2){
-                    // Elimina el otro caso sencillo, se escogio el valor (-1,-1)
-                        aux[i-1][j] = mat[i][j];
-                    }else if(j>k){
-                    //se maneja el caso más "difícil", cuando se escoge un valor entre (0, -1), especificament cuando se el tiene que 
-                    // restar uno a a las columnas para que coincida
-                        aux[i-1][j-1] = mat[i][j];
-        
-                        }else if(j<k){
-                    //cout << "( "<<  i << ", " << j << ")";
-                        aux[i-1][j] = mat[i][j];
-        
-    }
-    
-}
-    }
-    for (i=0; i<n-1; i++){
-        for (j=0; j<n-1; j++){
-            cout << aux[i][j] << " ";
-    
-        }
-        cout << endl;
-    }
-    determinant = aux[0][0] * aux[1][1] - aux[1][0] * aux[0][1];
-    if (k % 2 == 0){
-    value = mat[0][k];}
-    else {
-        value = mat[0][k] * -1;
-    }
-    result = determinant * value;
-    cout << "Determinant = " << determinant << "  value = " << value << endl;
-    cout << "result" << result << endl;
-    sum += result;
-}
 }
 
 
