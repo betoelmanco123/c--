@@ -1,15 +1,18 @@
 #include<iostream>
 
 using namespace std;
+bool is_running = 1;
+char value;
+int m;
+int i,j,k;
+int sum;
 
-int main() {
-    int m;
-    int i,j,k;
+void times() {
     cout <<  "¿Cuál es el numero de filas y columnas para la Matriz cuadrada A" << endl;
     cin >> m;
     if (m<1 || m>3){
         cout << "Ingresa un tamaño valido para la matriz (No mas de 3x3)\n";
-        return 0;
+        return ;
     }
     int matrix_A[m][m];
     for (i=0; i<m; i++){
@@ -21,15 +24,15 @@ int main() {
     int value, result;
     if (m==1){
         cout << "El determinante es " << matrix_A[0][0] << "\n";
-        return 0;
+        return ;
     }else if(m==2){
         k = matrix_A[0][0] * matrix_A[1][1] - matrix_A[1][0] * matrix_A[0][1];
-        cout << "El determinant es: " << k << "\n";
-        return 0;
+        cout << "El determinante es: " << k << "\n";
+        return ;
     }
     int determinant;
     int aux[2][2];
-    int sum = 0;
+    sum = 0;
     for (k=0; k<3; k++){
         for (i=0; i<3; i++){
             for (j=0; j<3; j++){
@@ -68,6 +71,16 @@ int main() {
 }
 cout << "determinant = " << sum << endl;
 
+}
+int main(){
+    while (is_running){
+        times();
+        cout << "do you wanna continue? (y/n): ";
+        cin >> value;
+        if (value == 'n'){
+            is_running = 0;
+        }
+    }
 }
 
 
