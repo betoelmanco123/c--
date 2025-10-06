@@ -5,6 +5,7 @@ int m,p,q,n; // Tamaños
 int i,j,k,t; // Índices
 
 void times(){
+    
     cout <<  "How many  rows does the matrix A have?\n";
     cin >> m;
     cout << "How many columns does the matrix A have?\n";

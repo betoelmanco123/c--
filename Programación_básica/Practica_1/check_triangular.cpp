@@ -38,7 +38,7 @@ void check_triangular() {
         }           
     }
     if (up && down){
-        cout << "La matriz es triangular inferior y superior\n";
+        cout << "La matriz es triangular inferior y superior \n";
 
     }else if (up){
         cout << "La matriz es triangular superior\n";
